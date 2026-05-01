@@ -25,7 +25,7 @@ Deep learning model to detect pneumonia from chest X-ray images using transfer l
 
 ## 🚀 Try It Live
 
-[Demo on Hugging Face Spaces](https://huggingface.co/spaces/YOUR_USERNAME/xray-pneumonia-classifier)
+[Demo on Hugging Face Spaces](https://huggingface.co/spaces/StarMukesh/xray-pneumonia-classifer)
 
 ## 💻 Run Locally
 
