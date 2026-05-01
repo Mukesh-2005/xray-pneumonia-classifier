@@ -42,12 +42,12 @@ python demo.py
 ```
 
 ## 📁 Project Structure
-├── train.py           # Training script
-├── model.py           # Model definition
-├── dataset.py         # Data loading
-├── evaluate.py        # Evaluation metrics
-├── demo.py            # Gradio interface
-├── best_model.pth     # Trained weights
+├── train.py           
+├── model.py           
+├── dataset.py         
+├── evaluate.py        
+├── demo.py            
+├── best_model.pth     
 └── README.md
 
 ## 📚 Dataset
