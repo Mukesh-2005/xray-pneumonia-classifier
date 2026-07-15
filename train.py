@@ -11,7 +11,7 @@ def train_model(num_epochs=10, batch_size=16, freeze_strategy='all'):
     
     # Setup
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"🖥️  Using device: {device}\n")
+    print(f"  Using device: {device}\n")
     
     # Load data
     data_path = os.path.expanduser("D:/chest_xray")
@@ -75,7 +75,7 @@ def train_model(num_epochs=10, batch_size=16, freeze_strategy='all'):
         test_acc = 100 * test_correct / test_total
         
         # Print results
-        print(f"\n📊 Results:")
+        print(f"\n Results:")
         print(f"   Train Loss: {avg_loss:.4f}")
         print(f"   Train Acc:  {train_acc:.2f}%")
         print(f"   Test Acc:   {test_acc:.2f}%")
@@ -84,10 +84,10 @@ def train_model(num_epochs=10, batch_size=16, freeze_strategy='all'):
         if test_acc > best_acc:
             best_acc = test_acc
             torch.save(model.state_dict(), 'best_model.pth')
-            print(f"   ✅ Saved best model! (Test Acc: {best_acc:.2f}%)")
+            print(f"   Saved best model! (Test Acc: {best_acc:.2f}%)")
     
     print(f"\n{'='*60}")
-    print(f"🎉 Training Complete!")
+    print(f" Training Complete!")
     print(f"   Best Test Accuracy: {best_acc:.2f}%")
     print(f"{'='*60}")
 
