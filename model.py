@@ -18,7 +18,7 @@ def create_model(freeze_strategy='all', num_classes=2):
         # Pattern 1: Freeze everything
         for param in model.parameters():
             param.requires_grad = False
-        print("✅ Pattern 1: All layers frozen")
+        print(" Pattern 1: All layers frozen")
         
     elif freeze_strategy == 'partial':
         # Pattern 2: Freeze only early layers
@@ -26,7 +26,7 @@ def create_model(freeze_strategy='all', num_classes=2):
             param.requires_grad = False
         for param in model.layer2.parameters():
             param.requires_grad = False
-        print("✅ Pattern 2: Early layers frozen")
+        print(" Pattern 2: Early layers frozen")
     
     # Replace final layer
     num_features = model.fc.in_features  # 2048
@@ -36,7 +36,7 @@ def create_model(freeze_strategy='all', num_classes=2):
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     total = sum(p.numel() for p in model.parameters())
     
-    print(f"📊 Trainable: {trainable:,}/{total:,} ({trainable/total*100:.1f}%)")
+    print(f" Trainable: {trainable:,}/{total:,} ({trainable/total*100:.1f}%)")
     
     return model
 
@@ -49,12 +49,12 @@ if __name__ == "__main__":
     dummy_input = torch.randn(2, 3, 224, 224)  # Batch of 2 images
     output = model(dummy_input)
     
-    print(f"\n✅ Input shape: {dummy_input.shape}")
-    print(f"✅ Output shape: {output.shape}")  # Should be [2, 2]
-    print(f"✅ Output: {output}")
+    print(f"\n Input shape: {dummy_input.shape}")
+    print(f" Output shape: {output.shape}")  # Should be [2, 2]
+    print(f" Output: {output}")
     
     # Check if GPU available
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"\n✅ Device: {device}")
     
-    print("\n✅ Model ready!")
+    print("\n Model ready!")
