@@ -26,7 +26,7 @@ def evaluate_model():
     all_preds = []
     all_labels = []
     
-    print("📊 Evaluating model...\n")
+    print(" Evaluating model...\n")
     
     with torch.no_grad():
         for images, labels in test_loader:
@@ -40,11 +40,11 @@ def evaluate_model():
     # Calculate metrics
     accuracy = 100 * np.sum(np.array(all_preds) == np.array(all_labels)) / len(all_labels)
     
-    print(f"✅ Test Accuracy: {accuracy:.2f}%\n")
+    print(f" Test Accuracy: {accuracy:.2f}%\n")
     
     # Classification report
     class_names = ['NORMAL', 'PNEUMONIA']
-    print("📋 Classification Report:")
+    print("Classification Report:")
     print(classification_report(all_labels, all_preds, target_names=class_names))
     
     # Confusion matrix
@@ -58,7 +58,7 @@ def evaluate_model():
     plt.xlabel('Predicted Label')
     plt.tight_layout()
     plt.savefig('confusion_matrix.png', dpi=150)
-    print("\n✅ Confusion matrix saved as 'confusion_matrix.png'")
+    print("\n Confusion matrix saved as 'confusion_matrix.png'")
     
     # Save results
     with open('results.txt', 'w') as f:
@@ -67,7 +67,7 @@ def evaluate_model():
         f.write(classification_report(all_labels, all_preds, target_names=class_names))
         f.write(f"\nConfusion Matrix:\n{cm}\n")
     
-    print("✅ Results saved as 'results.txt'")
+    print(" Results saved as 'results.txt'")
     
     return accuracy
 
