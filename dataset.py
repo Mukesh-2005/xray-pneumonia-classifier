@@ -81,12 +81,12 @@ if __name__ == "__main__":
     print("Loading data...")
     train_loader, test_loader = get_data_loaders(data_path, batch_size=16)
     
-    print(f"✅ Train batches: {len(train_loader)}")
-    print(f"✅ Test batches: {len(test_loader)}")
+    print(f" Train batches: {len(train_loader)}")
+    print(f" Test batches: {len(test_loader)}")
     
     # Test one batch
     images, labels = next(iter(train_loader))
-    print(f"✅ Batch shape: {images.shape}")  # Should be [16, 3, 224, 224]
-    print(f"✅ Labels: {labels[:8]}")  # 0=NORMAL, 1=PNEUMONIA
+    print(f" Batch shape: {images.shape}")  # Should be [16, 3, 224, 224]
+    print(f" Labels: {labels[:8]}")  # 0=NORMAL, 1=PNEUMONIA
     
-    print("\n✅ Data loader ready!")
+    print("\n Data loader ready!")
